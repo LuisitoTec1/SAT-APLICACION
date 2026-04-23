@@ -1,0 +1,23 @@
+CREATE TABLE RegistroRfc (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    tipo_persona TEXT NOT NULL,
+    datos_json TEXT NOT NULL,
+    fecha_creacion INTEGER NOT NULL,
+    completado INTEGER NOT NULL DEFAULT 0
+);
+
+insertRegistro:
+INSERT INTO RegistroRfc(tipo_persona, datos_json, fecha_creacion, completado)
+VALUES (?, ?, ?, ?);
+
+selectAll:
+SELECT * FROM RegistroRfc ORDER BY fecha_creacion DESC;
+
+selectById:
+SELECT * FROM RegistroRfc WHERE id = ?;
+
+updateRegistro:
+UPDATE RegistroRfc SET datos_json = ?, completado = ? WHERE id = ?;
+
+deleteById:
+DELETE FROM RegistroRfc WHERE id = ?;

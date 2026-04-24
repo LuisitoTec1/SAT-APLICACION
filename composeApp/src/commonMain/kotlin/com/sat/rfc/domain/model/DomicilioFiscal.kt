@@ -1,4 +1,4 @@
-package com.sat.rfc.domain.model
+/*package com.sat.rfc.domain.model
 
 data class DomicilioFiscal(
     val codigoPostal: String = "",      // 5 dígitos — autocompleta Estado/Municipio
@@ -14,4 +14,25 @@ data class DomicilioFiscal(
     val entreCalle2: String = "",       // Referencia vial
     val referenciaAdicional: String = "", // Ej: "Frente al parque"
     val caracteristicasDomicilio: String = "" // Descripción física del edificio
+)*/
+
+package com.sat.rfc.domain.model
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class DomicilioFiscal(
+    val codigoPostal: String = "",
+    val estado: String = "",
+    val municipio: String = "",
+    val localidad: String = "",
+    val colonia: String = "",
+    val tipoVialidad: String = "",
+    val nombreVialidad: String = "",
+    val numeroExterior: String = "",
+    val numeroInterior: String = "",
+    val entreCalle1: String = "",
+    val entreCalle2: String = "",
+    val referenciaAdicional: String = "",
+    val caracteristicasDomicilio: String = ""
 )

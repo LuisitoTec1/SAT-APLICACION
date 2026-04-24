@@ -13,14 +13,17 @@ data class PersonaMoral(
 
 package com.sat.rfc.domain.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class PersonaMoral(
-    val denominacion: String = "",          // Razón Social en MAYÚSCULAS (validada por SE)
-    val fechaConstitucion: String = "",     // DD/MM/AAAA (dato del Acta Constitutiva)
-    val rfcRepresentanteLegal: String = "", // 13 caracteres alfanumérico
-    val rfcSocios: List<String> = emptyList(), // 12 o 13 caracteres c/u
-    val numeroEscritura: String = "",       // Alfanumérico
-    val regimenCapital: String = "",        // S.A. de C.V., S.C., A.C., etc.
+    val denominacion: String = "",
+    val fechaConstitucion: String = "",
+    val rfcRepresentanteLegal: String = "",
+    val rfcSocios: List<String> = emptyList(),
+    val numeroEscritura: String = "",
+    val regimenCapital: String = "",
     val actividadEconomica: String = "",
-    val regimenFiscal: String = "",         // ← AGREGADO (faltaba en el modelo original)
+    val regimenFiscal: String = "",
     val domicilioFiscal: DomicilioFiscal = DomicilioFiscal()
 )

@@ -1,14 +1,17 @@
 CREATE TABLE RegistroRfc (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    tipo_persona TEXT NOT NULL,
-    datos_json TEXT NOT NULL,
+    id             INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    tipo_persona   TEXT    NOT NULL,
+    datos_json     TEXT    NOT NULL,
     fecha_creacion INTEGER NOT NULL,
-    completado INTEGER NOT NULL DEFAULT 0
+    completado     INTEGER NOT NULL DEFAULT 0
 );
 
 insertRegistro:
 INSERT INTO RegistroRfc(tipo_persona, datos_json, fecha_creacion, completado)
 VALUES (?, ?, ?, ?);
+
+lastInsertRowId:
+SELECT last_insert_rowid();
 
 selectAll:
 SELECT * FROM RegistroRfc ORDER BY fecha_creacion DESC;
